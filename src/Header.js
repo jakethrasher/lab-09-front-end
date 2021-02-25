@@ -22,7 +22,7 @@ export default withRouter (class Header extends Component {
                 <div style={ linkContainer}>
 
                 {this.props.location.pathname !=='/' && <NavLink exact to='/'>Home</NavLink>}
-                <NavLink exact to='/records'> Records Page </NavLink>
+                {this.props.location.pathname !=='/records' && <NavLink exact to='/records'> Records Page </NavLink>}
                 <NavLink exact to='/create'> Add Record</NavLink>
 
                 </div>

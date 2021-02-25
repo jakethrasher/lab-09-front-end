@@ -7,7 +7,7 @@ import Spinner from './Spinner.js';
 export default class ListPage extends Component {
     state={
         records:[],
-        loading: false,
+        loading: true,
     }
     componentDidMount = async ()=>{
 

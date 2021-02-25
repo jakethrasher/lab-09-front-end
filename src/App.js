@@ -4,33 +4,41 @@ import {
   Route, 
   Switch,
 } from 'react-router-dom';
-import CreatePage from './CreatePage';
-import ListPage from './ListPage'
-import DetailPage from './ListPage'
-import Header from './Header'
+import CreatePage from './CreatePage.js';
+import ListPage from './ListPage.js'
+import DetailPage from './DetailPage.js'
+import Header from './Header.js'
+import HomePage from './HomePage.js'
+
 
 export default class App extends Component {
   render() {
     return (
       <div>
          <Router>
-                    <Header/>
+                  <Header/>
                     <Switch>
                         <Route 
                             path="/" 
                             exact
+                            render={(routerProps) => <HomePage {...routerProps} />} 
+                        />
+                        <Route 
+                            path="/records" 
+                            exact
                             render={(routerProps) => <ListPage {...routerProps} />} 
                         />
-                            <Route 
-                                path="/create" 
-                                exact
-                                render={(routerProps) => <CreatePage {...routerProps} />} 
-                            />
                         <Route 
-                            path="/:id" 
+                            path="/records/:recordId" 
                             exact
                             render={(routerProps) => <DetailPage {...routerProps} />} 
                         />
+                        <Route 
+                            path="/create" 
+                            exact
+                            render={(routerProps) => <CreatePage {...routerProps} />} 
+                        />
+                        
                     </Switch>
                 </Router>
       </div>

@@ -14,7 +14,7 @@ export default class CreatePage extends Component {
     handleSubmit = async(e)=>{
         e.preventDefault();
         await postRecord(this.state)
-        this.props.history.push('/');
+        this.props.history.push('/records');
     }
     
     handleChangeCategory=(e)=>{
@@ -39,7 +39,8 @@ export default class CreatePage extends Component {
             
             
             return (
-                <div >
+                <div className="form-container">
+                    <h1>Add a Record</h1>
                     <form onSubmit={this.handleSubmit} className="form">
                         <label>
                             Artist

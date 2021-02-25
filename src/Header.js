@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 
-export default class Header extends Component {
+export default withRouter (class Header extends Component {
     render() {
         const header={
             borderBottom: '2px solid black',
@@ -20,12 +20,13 @@ export default class Header extends Component {
             <div style={ header }>
                 <div style={ linkContainer}>
 
-                <NavLink exact to='/'> Records Page </NavLink>
+                {this.props.location.pathname !=='/' && <NavLink exact to='/'>Home</NavLink>}
+                <NavLink exact to='/records'> Records Page </NavLink>
                 <NavLink exact to='/create'> Add Record</NavLink>
 
                 </div>
             </div>
         )
     }
-}
+})
                 

@@ -7,9 +7,30 @@ export async function getRecords () {
     return body;
 }
 
+export async function getRecord (id) {
+    const { body } = await request.get(`${URL}/records/${id}`)
+    return body;
+}
+
+
 export async function postRecord (record){
     const { body } = await request.post(`${URL}/records`)
     .send(record)
+    return body;
+}
 
+export async function putRecord (id, record){
+    const { body } = await request.put(`${URL}/records/${id}`)
+    .send(record)
+    return body;
+}
+
+export async function deleteRecord(id){
+    const { body } = await request.delete(`${URL}/records/${id}`);
+    return body;
+}
+
+export async function getCategories(){
+    const { body } = await request.get(`${URL}/categories`);
     return body;
 }

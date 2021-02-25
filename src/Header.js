@@ -9,7 +9,8 @@ export default withRouter (class Header extends Component {
             display: 'flex',
             justifyContent: 'flex-end',
             alignItems:'center',
-            height: '3em'
+            height: '3em',
+            backgroundColor: 'lightpink'
         }
         const linkContainer={
             width:'50%',

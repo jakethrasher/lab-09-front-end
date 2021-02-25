@@ -42,11 +42,9 @@ export default class ListPage extends Component {
                     </Link>
                     )
                 }
-
-               
                 </div>
             </div>
         )
     }
 }
-              
+            

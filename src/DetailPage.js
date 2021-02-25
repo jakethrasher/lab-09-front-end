@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { getRecord } from './api-utils.js';
+import { getRecord, putRecord } from './api-utils.js';
 import './App.css'
 
 export default class DetailPage extends Component {
@@ -10,10 +10,8 @@ export default class DetailPage extends Component {
         condition:'',
         category_id:1,
         price:'',
-        categories:[]
-
     }
-    componentDidMount =async()=>{
+    componentDidMount = async () =>{
         const record = await getRecord(this.props.match.params.recordId)
         
         this.setState({
@@ -24,8 +22,8 @@ export default class DetailPage extends Component {
 
     handleSubmit = async(e)=>{
         e.preventDefault();
-        
-        this.props.history.push('/');
+        await putRecord(this.props.match.params.recordId,this.state)
+        this.props.history.push('/records');
     }
     
     handleChangeCategory=(e)=>{
@@ -82,7 +80,7 @@ export default class DetailPage extends Component {
                                 <option value={4}>Electro-industrial</option>
                             </select>
                         </label>
-                        <button>ADD To Records</button>
+                        <button>Update</button>
                     </form>
                 </div>
             )

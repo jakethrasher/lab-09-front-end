@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { getCategories, getRecord } from './api-utils.js';
+import { getRecord } from './api-utils.js';
 import './App.css'
 
 export default class DetailPage extends Component {
@@ -14,7 +14,6 @@ export default class DetailPage extends Component {
 
     }
     componentDidMount =async()=>{
-        const categories = await getCategories();
         const record = await getRecord(this.props.match.params.recordId)
         
         this.setState({

@@ -9,7 +9,7 @@ export default class HomePage extends Component {
         }
         return (
             <div style={ homePage }>
-                <h1>CAUTION: HOMEPAGE</h1>
+                <h1>CAUTION HOMEPAGE</h1>
             </div>
         )
     }

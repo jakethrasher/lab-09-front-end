@@ -9,7 +9,7 @@ export default class DetailPage extends Component {
         image_url:'',
         condition:'',
         category_id:1,
-        price:'',
+        price:0,
     }
     componentDidMount = async () =>{
         const record = await getRecord(this.props.match.params.recordId)
@@ -40,7 +40,7 @@ export default class DetailPage extends Component {
             }else if(e.target.name === 'condition'){
                 await this.setState({condition: e.target.value})
             }else if(e.target.name === 'price'){
-                await this.setState({price: Number(e.target.value)})
+                await this.setState({price: e.target.value})
             }
         }
     handleDelete = async () =>{

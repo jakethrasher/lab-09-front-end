@@ -38,7 +38,7 @@ export default class ListPage extends Component {
                         <p>Album: {item.album}</p>
                         <p>Condition: {item.condition}</p>
                         <p>Category: {item.name}</p>
-                        <p>Price: {item.price}</p>
+                        <p>Price:${item.price}</p>
                     </Link>
                     )
                 }

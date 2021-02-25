@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { getRecord, putRecord } from './api-utils.js';
+import { deleteRecord, getRecord, putRecord } from './api-utils.js';
 import './App.css'
 
 export default class DetailPage extends Component {
@@ -43,6 +43,9 @@ export default class DetailPage extends Component {
                 await this.setState({price: Number(e.target.value)})
             }
         }
+    handleDelete = async () =>{
+        await deleteRecord(this.props.match.params.recordId)
+    }
         
         render() {
             console.log(this.state)
@@ -82,6 +85,7 @@ export default class DetailPage extends Component {
                         </label>
                         <button>Update</button>
                     </form>
+                        <button onClick={this.handleDelete}>Delete</button>
                 </div>
             )
         }
